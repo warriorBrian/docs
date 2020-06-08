@@ -1,25 +1,21 @@
 ---
 title: 关于 Nuxt.js
-description: "2016 年 10 月 25 日, zeit.co 背后的团队对外发布了 Next.js，一个 React 的服务端渲染应用框架。几小时后，与 Next.js 异曲同工，一个基于 Vue.js 的服务端渲染应用框架应运而生，我们称之为：Nuxt.js。"
+description: "Nuxt是一个基于Vue.js的渐进式框架，用于创建现代Web应用程序。它基于Vue.js官方库（vue，vue-router和vuex）和强大的开发工具（webpack，Babel和PostCSS）"
 ---
 
-> 2016 年 10 月 25 日，[zeit.co](https://zeit.co/) 背后的团队对外发布了 [Next.js](https://zeit.co/blog/next)，一个 React 的服务端渲染应用框架。几小时后，与 Next.js 异曲同工，一个基于 [Vue.js](https://vuejs.org) 的服务端渲染应用框架应运而生，我们称之为：**Nuxt.js**。
+> Nuxt是一个基于Vue.js的渐进框架，用于创建现代Web应用程序。它基于Vue.js官方库（vve，vue-router和vuex）和强大的开发工具（webpack，Babel和PostCSS）Nuxt的目标是使Web开发功能强大且性能卓越。
 
 ## Nuxt.js 是什么？
 
-Nuxt.js 是一个基于 Vue.js 的通用应用框架。
+Nuxt是一个框架，旨在按照官方Vue指南为您提供强大的体系结构。
 
-通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 **UI渲染**。
+它可逐步采用，可用于创建从静态登录页面到复杂的企业就绪Web应用程序。
 
-我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。
+本质上是多功能的，它支持不同的目标(server, serverless or static)，并且服务器端呈现是可切换的。
 
-Nuxt.js 预设了利用 Vue.js 开发**服务端渲染**的应用所需要的各种配置。
+可通过强大的模块生态系统进行扩展，从而轻松连接REST或GraphQL端点，常用的CMS，css框架等，PWA和AMP支持只是Nuxt项目的一个模块。
 
-除此之外，我们还提供了一种命令叫：`nuxt generate` ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。
-
-我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。
-
-作为框架，Nuxt.js 为 `客户端/服务端` 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。
+NuxtJs是您的Vue.js项目的中坚力量，它提供了构建框架的结构，使您可以放心而又灵活。
 
 ## Nuxt.js 框架是如何运作的？
 
@@ -38,7 +34,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 
 ## 特性
 
-- 基于 Vue.js
+- 基于 Vue.js(`*.vue`)
 - 自动代码分层
 - 服务端渲染
 - 强大的路由功能，支持异步数据
@@ -50,6 +46,7 @@ Nuxt.js 集成了以下组件/框架，用于开发完整而强大的 Web 应用
 - 集成 ESLint
 - 支持各种样式预处理器： SASS、LESS、 Stylus 等等
 - 支持 HTTP/2 推送
+- 扩展模块化架构
 
 ## 流程图
 

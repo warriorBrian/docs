@@ -16,7 +16,7 @@ description: "Nuxt.js 十分简单易用。一个简单的项目只需将 `nuxt`
   </a>
 </div>
 
-## 运行 create-nuxt-app
+## 使用 create-nuxt-app
 
 为了快速入门，Nuxt.js团队创建了脚手架工具 [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)。
 

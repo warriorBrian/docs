@@ -110,8 +110,6 @@ router: {
 
 你会发现名称为 `users-id` 的路由路径带有 `:id?` 参数，表示该路由是可选的。如果你想将它设置为必选的路由，需要在 `users/_id` 目录内创建一个 `index.vue` 文件。
 
-：API Configuration generate
-
 <div class="Alert Alert--orange">
 
 <b>警告：</b>`generate` 命令会忽略动态路由: [API Configuration generate](/api/configuration-generate#routes)
@@ -309,6 +307,11 @@ export default {
 }
 ```
 
+### 本地访问路由参数
+
+您可以通过`this`来访问本地页面或组件中的当前路由参数 `this.$route.params.{parameterName}`。 
+例如，如果您有一个动态用户页面(`users\_id.vue`)，并且想要访问`id`参数以加载用户或进程信息，则可以像这样访问变量: `this.$route.params.id`。 
+
 #### 在Surge上实现
 
 Surge [可以处理](https://surge.sh/help/adding-a-custom-404-not-found-page)`200.html` 和 `404.html`，`generate.fallback`默认设置为`200.html`，因此无需更改它。
@@ -452,7 +455,7 @@ module.exports = {
 
 ```js
 export default {
-  middleware: 'stats'
+  middleware: ['auth', 'stats']
 }
 ```
 

@@ -24,13 +24,8 @@ __package.json__
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "es2015"
+  "files": [
+    "test/**/*"
   ]
 }
 ```

@@ -3,12 +3,12 @@ title: 配置
 description: Nuxt.js 默认的配置涵盖了大部分使用情形，可通过 nuxt.config.js 来覆盖默认的配置。
 ---
 
-> Nuxt.js 默认的配置涵盖了大部分使用情形，可通过 nuxt.config.js 来覆盖默认的配置。
+> Nuxt.js 默认的配置涵盖了大部分使用情形，可通过 `nuxt.config.js` 来覆盖默认的配置。
 
 ### build
 
 Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模块，以减少应用 bundle 的体积。如果你的应用依赖第三方模块，这个配置项是十分实用的。
-
+此选项使您可以为`构建`步骤配置各种设置，包括`loaders`, `filenames`，`webpack`配置和编译等
 [关于 build 配置项的详细文档](/api/configuration-build)
 
 ### css
@@ -101,3 +101,27 @@ Nuxt.js 允许你在自动生成的 `vendor.bundle.js` 文件中添加一些模�
 该配置项用于个性化配置应用过渡效果属性的默认值。
 
 [关于 transition 配置项的详细文档](/api/configuration-transition)
+
+## Asynchronous Configuration
+
+如果您需要使用异步数据（例如来自API接口等）填充某些选项（例如`head`），则可以返回`promise`。
+
+例子：
+
+```js
+/* 
+axios-module cannot be used in nuxt.config.js
+You need to import axios and configure it again
+*/
+import axios from 'axios'
+
+export default async () => {
+  const data = await axios.get('endpoint')
+  return {
+    head: {
+      title: data.head.title,
+      //... rest of config
+    }
+  }
+}
+```

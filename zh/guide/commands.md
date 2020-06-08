@@ -60,9 +60,9 @@ npm run dev
 
 ## 发布部署
 
-Nuxt.js 提供了两种发布部署应用的方式：服务端渲染应用部署 和 静态应用部署。
+Nuxt.js 提供了三种模式发布部署应用的方式：服务端渲染应用部署(SSR) 和 静态应用部署或单页面应用(SPA)。
 
-### 服务端渲染应用部署
+### 服务端渲染应用部署(SSR)
 
 部署 Nuxt.js 服务端渲染的应用不能直接使用 `nuxt` 命令，而应该先进行编译构建，然后再启动 Nuxt 服务，可通过以下两个命令来完成：
 
@@ -70,6 +70,12 @@ Nuxt.js 提供了两种发布部署应用的方式：服务端渲染应用部署
 nuxt build
 nuxt start
 ```
+
+您还可以在`nuxt.config.js`中设置`server.https`，并使用传递给[`https.createServer`](https://nodejs.org/api/https.html)的相同选项（如果您选择以`HTTPS`模式提供`Nuxt.js`）。
+
+如果您在`nuxt.config.js`中设置`server.socket`选项(or `-n` in the [CLI](https://nuxtjs.org/guide/commands#list-of-commands))。
+
+使用[Unix sockets](https://en.wikipedia.org/wiki/Berkeley_sockets)时，请确保不要设置主机(`host`)和端口(`port`)参数，否则`socket`参数将被忽略。
 
 推荐的 `package.json` 配置如下：
 ```json
@@ -99,6 +105,16 @@ npm run generate
 ```
 
 这个命令会创建一个 `dist` 文件夹，所有静态化后的资源文件均在其中。
+
+要在遇到页面错误时返回非零状态代码并让`CI/CD`自动化部署或构建失败，可以使用 `--fail-on-error` 参数。
+
+```bash
+npm run generate --fail-on-error
+
+// OR
+
+yarn generate --fail-on-error
+```
 
 如果你的项目需要用到[动态路由](/guide/routing#动态路由)，请移步 [generate配置API](/api/configuration-generate) 了解如何让 Nuxt.js 生成此类动态路由的静态文件。
 
